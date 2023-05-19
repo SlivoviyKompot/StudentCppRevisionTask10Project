@@ -38,6 +38,23 @@
 *	[output 7]: -1
 */
 
+#include <iostream>
+
+using namespace std;
+
 long long task04(int number) {
-	return 0;
+	if (number <= 0) {
+		return -1;
+	}
+
+	long long a = 0;
+	long long b = 1;
+
+	for (int i = 1; i < number; i++) {
+		long long t = a;
+		a = b;
+		b = t + b;
+	}
+
+	return a;
 }

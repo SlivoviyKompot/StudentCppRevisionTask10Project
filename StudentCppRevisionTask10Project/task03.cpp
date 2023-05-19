@@ -26,8 +26,7 @@
 */
 
 int task03(long long number) {
-	cout << number << endl;
-	int max = 0;
+	int max = -1;
 	int sub_max = -1;
 
 	if (number < 0) {
@@ -36,10 +35,15 @@ int task03(long long number) {
 
 	while (number) {
 		int d = number % 10;
+		
 		if (d > max) {
+			if (max > sub_max) {
+				sub_max = max;
+			}
+
 			max = d;
 		}
-		if (d > sub_max && d < max) {
+		else if(d > sub_max && d < max) {
 			sub_max = d;
 		}
 

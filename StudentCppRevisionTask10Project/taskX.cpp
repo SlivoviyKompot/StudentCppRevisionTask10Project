@@ -30,5 +30,26 @@
 */
 
 int taskX(long long number) {
-	return 0;
+	int count = 1;
+	int temp_count = 1;
+
+	if (number < 0) {
+		number = -number;
+	}
+
+	while (number / 10) {
+		if (number % 10 == number % 100 / 10) {
+			temp_count++;
+		}
+		if (number % 10 != number % 100 / 10) {
+			temp_count = 1;
+		}
+		if (temp_count > count) {
+			count = temp_count;
+		}
+		
+		number /= 10;
+	}
+
+	return count;
 }

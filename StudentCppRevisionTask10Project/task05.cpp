@@ -46,5 +46,30 @@
 */
 
 int task05(long long number) {
-	return 0;
+	int i = 1;
+	
+	
+
+	if (number < 0) {
+		return -1;
+	}
+
+	long long a = 0;
+	long long b = 1;
+
+	while (a <= number) {
+		long long t = a;
+		if (number == a) {
+			return i;
+		}
+
+		a = b;
+		b = t + b;
+
+		if (number < a) {
+			return -1;
+		}
+
+		i++;
+	}
 }
